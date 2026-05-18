@@ -1,0 +1,87 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  margin: 20px;
+}
+
+body {
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+  background: url("images/landscape.jpg");
+  background-size: 100dvw 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inputs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.location-input {
+  border-radius: 15px;
+  height: 50px;
+  width: 400px;
+  border: none;
+  background-color: hsla(0, 0%, 100%, 0.3);
+  font-size: 1.5rem;
+  padding: 0 20px;
+}
+
+.unit-toggle {
+  height: 50px;
+  width: 60px;
+  font-size: 1.5rem;
+  font-family: inherit;
+  border-radius: 15px;
+  background-color: hsla(0, 0%, 100%, 0.3);
+}
+
+.weather-detail {
+  /* align-self: flex-start; */
+  font-size: 40px;
+  margin-top: 200px;
+  backdrop-filter: blur(5px);
+  border-radius: 15px;
+  background-color: hsla(0, 0%, 100%, 0.3);
+  padding: 50px;
+}
+
+.temp-more {
+  display: flex;
+}
+
+.temp {
+  font-size: 3em;
+}
+
+.more {
+  border-left: 2px solid black;
+  padding-left: 10px;
+  margin-left: 10px;
+}
+
+.feelslike::after,
+.temp::after {
+  content: var(--unit-symbol);
+}
+
+.temp::after {
+  font-size: 2.5rem;
+  font-weight: bold;
+}

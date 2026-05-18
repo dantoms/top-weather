@@ -10,10 +10,25 @@ const unitSymbols = {
 };
 
 async function getData(location, unit) {
-  const response = await fetch(
-    `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}/today?unitGroup=${unit}&key=A3TFBZ58P6XLMGNRTQAYKLGVA&contentType=json`,
-  );
-  return response.json();
+  try {
+    const response = await fetch(
+      `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}/today?unitGroup=${unit}&key=A3TFBZ58P6XLMGNRTQAYKLGVA&contentType=json`,
+    );
+    if (!response.ok) {
+      throw new Error(`Server responded with status: ${response.status}`);
+      return;
+    }
+    return await response.json();
+  } catch (error) {
+    showError();
+    console.log(error);
+    return false;
+  }
+}
+
+function showError() {
+  const weatherDetail = document.querySelector(".weather-detail");
+  weatherDetail.innerHTML = "An error occured.";
 }
 
 function switchUnits() {

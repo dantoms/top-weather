@@ -1,0 +1,31 @@
+{
+  "name": "top-weather",
+  "version": "1.0.0",
+  "description": "A simple webpack config",
+  "main": "webpack.config.js",
+  "scripts": {
+    "build": "webpack",
+    "dev": "webpack serve",
+    "deploy": "git subtree push --prefix dist origin gh-pages"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dantoms/top-weather.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/dantoms/top-weather/issues"
+  },
+  "homepage": "https://github.com/dantoms/top-weather#readme",
+  "devDependencies": {
+    "css-loader": "^7.1.4",
+    "html-webpack-plugin": "^5.6.7",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.106.2",
+    "webpack-cli": "^7.0.2",
+    "webpack-dev-server": "^5.2.4"
+  }
+}

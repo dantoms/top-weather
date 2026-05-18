@@ -1,3 +1,5 @@
+import "./style.css";
+
 const unitSwitch = document.querySelector(".unit-toggle");
 let unit = "uk";
 

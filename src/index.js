@@ -1,7 +1,7 @@
 import "./style.css";
 
 const unitSwitch = document.querySelector(".unit-toggle");
-let unit = "uk";
+let unit = "us";
 
 async function getData(location, unit) {
   const response = await fetch(

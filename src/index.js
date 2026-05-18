@@ -1,5 +1,6 @@
 import "./style.css";
 
+const locInput = document.querySelector(".location-input");
 const unitSwitch = document.querySelector(".unit-toggle");
 let unit = "us";
 
@@ -20,7 +21,16 @@ function switchUnits() {
   }
 }
 
+function loadData(location) {
+  const data = getData(location, unit);
+  data.then((data) => console.log(data));
+}
+
 unitSwitch.addEventListener("click", switchUnits);
 
-const data = getData("london", unit);
-data.then((data) => console.log(data));
+locInput.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    loadData(locInput.value);
+  }
+});
